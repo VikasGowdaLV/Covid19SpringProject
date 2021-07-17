@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Covid19 Details</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body style="background-color:Gray;">
+
+<div class="container-fluid">
+
+
+  <h1 align="center" style="color:white; font-size:400%;">Covid19 Details of <span th:text="${stateData.getLoc}">updateTime</span></h1>
+  <br>
+  <br>
+  <h4 align="center" >The Data is Updated On <span th:text="${#strings.abbreviate(#strings.replace(time,'T',' at '), 25)}">updateTime</span></h4>
+  <br>
+  <br>
+
+  <div class="alert alert-danger container container-fluid">
+    <h1 class="display-4" th:text="${stateData.getTotalConfirmed}" align="center"> </h1>
+    <p class="lead" align="center">Total cases reported in <span th:text="${stateData.getLoc}"></span> as of today</p>
+  </div>
+
+
+  <div class="container-fluid">
+    <table style="width:100%" class="table table-dark table-striped table-hover">
+      <tr style="width:100%" align="center" valign="center">
+        <!--        <th>Total</th>-->
+        <th>Confirmed Cases (Indian)</th>
+        <th>Confirmed Cases (Foreign)</th>
+        <th>Total Discharged</th>
+        <th>Total Deaths</th>
+        <!--        <th>Confirmed (Unknown Location)</th>-->
+      </tr>
+      <tr th:each="stateData : ${stateData}" style="width:100%" align="center" valign="center">
+        <!--        <td th:text="${summary.total}"></td>-->
+        <td th:text="${stateData.confirmedCasesIndian}">0</td>
+        <td th:text="${stateData.confirmedCasesForeign}">0</td>
+        <td th:text="${stateData.discharged}">0</td>
+        <td th:text="${stateData.deaths}">0</td>
+        <!--        <td th:text="${summary.confirmedButLocationUnidentified}">0</td>-->
+      </tr>
+
+    </table>
+  </div>
+
+  </div>
+</body>
+
+</html>
