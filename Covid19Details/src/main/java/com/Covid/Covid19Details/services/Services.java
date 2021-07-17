@@ -18,7 +18,7 @@ public class Services {
 
         AlertStatus alertStatus = new AlertStatus();
 
-        //business logic to derive the alert goes here
+        //logic to alert
         StateData stateData = covid19DataProvider.getStateData(state);
 
         alertStatus.setSummaryData(stateData);
@@ -38,6 +38,6 @@ public class Services {
 
     public SummaryData getOverAllSummary() {
 
-        return covid19DataProvider.getSummaryData();
+        return covid19DataProvider.getOverAllSummary();
     }
 }

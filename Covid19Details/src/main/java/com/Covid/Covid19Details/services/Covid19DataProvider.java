@@ -3,6 +3,7 @@ package com.Covid.Covid19Details.services;
 import com.Covid.Covid19Details.datarepo.ApiData;
 import com.Covid.Covid19Details.datarepo.StateData;
 import com.Covid.Covid19Details.datarepo.SummaryData;
+import lombok.Builder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 
+@Builder
 @Service
 public class Covid19DataProvider {
 
@@ -27,9 +29,9 @@ public class Covid19DataProvider {
 
         ApiData covidApiData = restTemplate.getForObject(URL, ApiData.class);
 
-        /*if(!covidApiData.isSuccess()){
-            throw new RuntimeException("Issue in fetching data");
-        }*/
+//        if(!covidApiData.isSuccess()){
+//            throw new RuntimeException("Issue in fetching data");
+//        }
         return Arrays.stream(covidApiData.getData().getRegional())
                 .filter(e -> e.getLoc().equalsIgnoreCase(state))
                 .findAny()
@@ -37,7 +39,7 @@ public class Covid19DataProvider {
 
     }
 
-    public SummaryData getSummaryData() {
+    public SummaryData getOverAllSummary() {
         ApiData covidApiData = restTemplate.getForObject(URL, ApiData.class);
 
         SummaryData summaryData = covidApiData.getData().getSummary();
