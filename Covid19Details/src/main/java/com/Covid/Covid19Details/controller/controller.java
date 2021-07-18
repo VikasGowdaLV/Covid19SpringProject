@@ -25,10 +25,10 @@ public class controller{
     @Autowired
     private Covid19DataProvider covid19DataProvider;
 
-    @GetMapping("/india/{state}")
-    public String getAlertAboutState(@PathVariable String state, Model model) {
+    @RequestMapping(path="/StateDetails", method = RequestMethod.POST)
+    public String getAlertAboutState(@RequestParam ("state") String StateName, Model model) {
 
-        StateData data = covid19DataProvider.getStateData(state);
+        StateData data = covid19DataProvider.getStateData(StateName.toLowerCase());
         SummaryData summaryData = services.getOverAllSummary();
 
         model.addAttribute("time", summaryData.getUpdateTime());

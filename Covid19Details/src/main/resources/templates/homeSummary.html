@@ -6,14 +6,14 @@
     <title>Covid19 Details</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body style="background-color:Gray;">
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
 
-<h1 align="center" style="color:white; font-size:400%;">Covid19 Details of India</h1>
+    <h1 align="center" style="color:rgb(214, 219, 192); font-size:400%;"><u>Covid19 Details of India</u></h1>
 <br>
 <br>
 <h4 align="center" >The Data is Updated On <span th:text="${#strings.abbreviate(#strings.replace(time,'T',' at '), 25)}">updateTime</span></h4>
@@ -24,7 +24,7 @@
     <h1 class="display-4" th:text="${summary.total}" align="center"></h1>
     <p class="lead" align="center">Total cases reported as of today</p>
 </div>
-
+<br>
 <div class="container-fluid">
 <table style="width:100%" class="table table-dark table-striped table-hover">
     <tr style="width:100%" align="center" valign="center">
@@ -45,7 +45,62 @@
     </tr>
 
 </table>
+<br><br>
+    <div>
+    <div class="form-group">
+        <div class="container-fluid"><h2 style="color:White">Search Covid19 Details of Individual State</h2>
+    <form th:action="StateDetails" method="post">
+<!--        <input id="stateData" type="text" name="state" placeholder="  Type State Name Correctly.." style="width:250px; height:50px">-->
+<!--        <a href="StateDetails"><button type="submit" class="btn btn-success" style="width:100px; height:50px"><i class="fa fa-search"></i> </button></a>-->
+
+        <label name="state"></label>
+        <select style="width:100%; height:50px" id="state" name="state">
+            <option value="none" selected disabled hidden>Select State</option>
+            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Ladakh">Ladakh</option>
+            <option value="Lakshadweep">Lakshadweep</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Puducherry">Puducherry</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="West Bengal">West Bengal</option>
+
+
+        </select>
+        <input class="btn btn-success" type="submit">
+    </form>
     </div>
+    </div>
+    </div>
+</div>
 </div>
 </body>
 

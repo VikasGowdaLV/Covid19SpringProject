@@ -11,10 +11,10 @@
 
 <body style="background-color:Gray;">
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
 
 
-  <h1 align="center" style="color:white; font-size:400%;">Covid19 Details of <span th:text="${stateData.getLoc}">updateTime</span></h1>
+  <h1 align="center" style="color:rgb(214, 219, 192); font-size:400%;"><u>Covid19 Details of <span th:text="${stateData.getLoc}">updateTime</span></u></h1>
   <br>
   <br>
   <h4 align="center" >The Data is Updated On <span th:text="${#strings.abbreviate(#strings.replace(time,'T',' at '), 25)}">updateTime</span></h4>
@@ -25,7 +25,7 @@
     <h1 class="display-4" th:text="${stateData.getTotalConfirmed}" align="center"> </h1>
     <p class="lead" align="center">Total cases reported in <span th:text="${stateData.getLoc}"></span> as of today</p>
   </div>
-
+<br><br>
 
   <div class="container-fluid">
     <table style="width:100%" class="table table-dark table-striped table-hover">
