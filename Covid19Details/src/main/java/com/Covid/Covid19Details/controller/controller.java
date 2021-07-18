@@ -38,7 +38,7 @@ public class controller{
         return "StateDetails";
     }
 
-    @GetMapping("/india")
+    @GetMapping("/")
     public String  homeSummary(Model model) {
         SummaryData summaryData = services.getOverAllSummary();
 

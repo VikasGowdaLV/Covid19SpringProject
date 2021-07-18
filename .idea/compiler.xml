@@ -8,15 +8,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Covid19Details" />
+        <module name="Covid19Details (2)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Covid19Details" target="16" />
+      <module name="Covid19Details" target="8" />
+      <module name="Covid19Details (2)" target="16" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Covid19Details" options="-parameters" />
+      <module name="Covid19Details (2)" options="-parameters" />
     </option>
   </component>
 </project>
